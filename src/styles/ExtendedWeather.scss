@@ -1,0 +1,81 @@
+@import './variables.scss';
+
+.extended{
+    width: 100%;
+    min-height: 270px;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    overflow: hidden;
+
+    &_header{
+        font-weight: 500;
+        font-size: 1.125rem;
+        color: $secondary-color;
+    }
+
+    &_items{
+        display: flex;
+        padding-top: 20px;
+        justify-content: space-between;
+        &__item{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 110px;
+            min-height: 220px;
+            position: relative;
+
+
+            &_title{
+                font-weight: 600;
+                font-size: 1.125rem;
+                color:$week-day;
+                width: 100%;
+                text-align: center;
+            }
+
+            &_icon{
+                width: 100%;
+                height: 4rem;
+                margin: 0.7rem auto;
+                font-size: 55px;
+                position: relative;
+   
+                img{
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                
+                
+            }
+
+            &_descr{
+                text-align: center;
+                width: 90%;
+                font-weight: 600;
+                font-size: 1.125rem;
+                color: rgb(74, 111, 161);
+            }
+
+            &_temp{
+                width: 100%;
+                margin-top: 10px;
+                font-size: 1.125rem;
+                color: rgb(74, 111, 161);
+                width: 5rem;
+                text-align: center;
+                position: absolute;
+                bottom: 16px;
+      
+            }
+        }
+    }
+}
+
+.animate__fadeInUp{
+    animation-duration: .5s;
+}

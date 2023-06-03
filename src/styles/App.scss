@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@800&family=Outfit:wght@300;400;500;600;700;900&family=Poppins:wght@100;200;300;400;500&family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
+@import './variables';
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color:$main-color;
+  
+}
+
+.App{
+  min-height: 100vh;
+  width: 100%;
+  background: url(https://esnz-reactweather.netlify.app/static/media/bg.6eb21da7.svg) center 120% / auto no-repeat, linear-gradient(rgb(249, 255, 255) 0%, rgb(56, 200, 230) 100%);
+  padding-bottom: 50px;
+  transition: .5s all;
+  &_center-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.container{
+  width: 960px;
+  margin: 0 auto;
+}
+
