@@ -1,0 +1,102 @@
+@import './variables.scss';
+
+
+
+.wholeDay{
+    width: 100%;
+    min-height: 370px;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255,0.75);
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+    border-radius: 15px;
+    padding: 1.5rem 2rem;
+    position: relative;
+
+    &_title{
+        font-weight: 500;
+        font-size: 1.125rem;
+        color: rgb(114, 126, 142);
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+        margin-top: 30px;
+        position: relative;
+    }
+      
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      height: 240px;
+    }
+    .mySwiper_item{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        // border :1px solid black;
+        .hour{
+            
+            &_temp{
+                font-weight: 600;
+                font-size: 1.125rem;
+                color:$week-day;
+                width: 100%;
+                text-align: center;
+            }
+
+            &_time{
+                font-weight: 600;
+                font-size: 1.125rem;
+                color:$main-color;
+                width: 100%;
+                text-align: center;
+            }
+            &_wind{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap:10px;
+                &__icon{
+                    // width: 20px;
+                    height: 23px;
+                }
+            }
+        }
+      }
+      
+      
+      
+}
+  
+
+.navigation-btn{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    svg{
+        fill: $secondary-color;
+    }
+}
+
+
+.btn-prev{
+    left: -15px;
+}
+
+.btn-next{
+    right: -15px;
+
+}
+.disabled_swiper_button {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+}

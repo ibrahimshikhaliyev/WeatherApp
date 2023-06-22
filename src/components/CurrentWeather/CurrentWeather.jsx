@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import ToggleBtn from '../ToggleBtn/ToggleBtn';
 
 import '../../styles/CurrentWeather.scss';
 import 'animate.css';   
@@ -5,34 +8,38 @@ import 'animate.css';
 import {FaWind , FaArrowUp,FaArrowDown} from 'react-icons/fa';
 
 
-const CurrentWeather=({weather})=>{
+const CurrentWeather=({weather,handleTempMeasure,darkTheme})=>{
 
+    const [tempMeasure,setTempMeasure]=useState('C');
     const {current,location}=weather;
 
-    const {cloud,condition,feelslike_c,feelslike_f ,gust_kph,gust_mph,humidity,pressure_in,pressure_mb,temp_c,temp_f,wind_kph,wind_mph}=current;
+    const {condition,feelslike_c,feelslike_f ,gust_kph,gust_mph,humidity,pressure_in,temp_c,temp_f}=current;
 
-
+    const onHandleTemChange=(measure)=>{
+        setTempMeasure(measure);
+        handleTempMeasure(measure);
+    }
 
     return(
-        <div className="current animate__fadeInUp">
+        <div className={`current  animate__fadeInUp ${darkTheme?'current_dark':null}`}>
             <div className="current_header">
-                <div className="current_header__title">Current Weather {}</div>
-                <div className="current_header__toggle"></div>
+                <div className="current_header__title">Current Weather </div>
+                <div className="current_header__toggle"><ToggleBtn onHandleTemChange={onHandleTemChange} darkTheme={darkTheme}/></div>
             </div>
             <div className="current_display">
                 <div className="current_display__temp">
                     <div className="city_name">{location.name}</div>
                     <div className="icon_cont">
                         <div className="icon"><img src={condition.icon} alt="" /></div>
-                        <div className="temperature">{temp_c}°</div>
+                        <div className="temperature">{ tempMeasure==='C'? temp_c.toFixed(0):temp_f.toFixed(0)}°</div>
                     </div>
                     <div className="weather_descr">{condition.text}</div>
                 </div>
                 <div className="current_display__secondary">
-                    <div className="feels">Feels like  {feelslike_c}°</div>
+                    <div className="feels">Feels like  { tempMeasure==='C'? feelslike_c:feelslike_f} °{tempMeasure}</div>
                     <div className="upDown">
-                        <div className="up"> <FaArrowUp className='arrows'/> {feelslike_c}°</div>
-                        <div className="down"><FaArrowDown className='arrows'/> {feelslike_c}°</div>
+                        <div className="up"> <FaArrowUp className='arrows'/> { tempMeasure==='C'? feelslike_c:feelslike_f} °{tempMeasure}</div>
+                        <div className="down"><FaArrowDown className='arrows'/>{ tempMeasure==='C'? feelslike_c:feelslike_f} °{tempMeasure}</div>
                     </div>
                     
                     <div className="current_display__secondary_items">
@@ -42,14 +49,14 @@ const CurrentWeather=({weather})=>{
                                 
                             </div>
                             <div className="item_text">Humidity</div>
-                            <div className="item_value">{humidity}%</div>
+                            <div className="item_value">{humidity}% </div>
                         </div>
                         <div className="current_display__secondary_items__item">
                             <div className="item_icon">
                                 <FaWind/>
                             </div>
                             <div className="item_text">Wind</div>
-                            <div className="item_value">{gust_kph}kph</div>
+                            <div className="item_value"> { tempMeasure==='C'? `${gust_kph} kph`:`${gust_mph} mph`}</div>
                         </div>
                         <div className="current_display__secondary_items__item">
                             <div className="item_icon">

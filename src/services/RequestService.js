@@ -7,7 +7,7 @@ const useRequestService=()=> {
     const apiKeyForecast = process.env.REACT_APP_BASE_FORECAST_URL;
     const apiKeyCurrent = process.env.REACT_APP_BASE_CURRENT_URL;
   
-
+    
     const getCurrentWeather = async (city) => {
       
       const weather = await request(
@@ -22,7 +22,7 @@ const useRequestService=()=> {
       );
       return  forecast;
     };
-
+    
 
     return { loading,error,getCurrentWeather,getForecast} ;
 }

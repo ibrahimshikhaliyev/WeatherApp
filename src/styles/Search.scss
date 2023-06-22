@@ -2,7 +2,6 @@
 
 .search{
     
-    transition: 5s all;
     width: 100%;
     height: 52px;
     display: flex;
@@ -11,6 +10,7 @@
     background: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px;
     padding: 0 20px ;
+    
     &_icon{
         display: flex;
         justify-content: center;
@@ -25,7 +25,6 @@
         height: 3.25rem;
         border: none;
         background: rgb(255, 255, 255);
-        
         font-size: 1.125rem;
         outline: none;
         &::placeholder{
@@ -44,6 +43,5 @@
         align-items:center;
         font-size: 20px;
         cursor: pointer;
-
     }
 }

@@ -23,6 +23,12 @@
             font-size: 1.125rem;
             color: rgb(114, 126, 142);
         }
+
+        &__toggle{
+            
+            display: flex;
+            gap: 10px;
+        }
     }
 
     &_display{

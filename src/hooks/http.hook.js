@@ -6,6 +6,7 @@ export const useHttp=()=>{
     const [error,setError]=useState(null);
 
     const request = useCallback(async(url,method='GET',body=null,headers={'Content-Type': 'application/json'})=>{
+       console.log(url)
         setLoading(true);
         setError(false);
         try{
@@ -25,7 +26,6 @@ export const useHttp=()=>{
         }catch(e){
             setLoading(false);
             setError(e.message);
-            
             throw e;
 
         }

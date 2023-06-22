@@ -1,0 +1,170 @@
+@import './variables.scss';
+
+.App_dark{
+    background: url(https://esnz-reactweather.netlify.app/static/media/darkBg.2ae50b33.svg) center 120% / auto no-repeat, linear-gradient(rgb(9 42 99) 0%, rgb(13 61 106) 100%);
+
+}
+
+.search_dark{
+    background-color: $main-bg-color-dark;
+    .search{
+        &_icon{
+            svg{
+                fill: $main-text-color-dark;
+            }
+        }
+    
+        &_input{
+            background-color: $main-bg-color-dark;
+            color:$main-text-color-dark;
+            &::placeholder{
+                color: $main-text-color-dark;
+            }
+    
+        }
+    
+    
+        &_location{
+            svg{
+                fill:$main-text-color-dark;
+            }
+        }
+    }
+    
+
+}
+
+
+.navbar_dark{
+    
+    .title{
+        color:$main-text-color-dark;
+    }
+
+    .btns-container{
+        .github_link{
+            svg{
+
+                fill:$main-text-color-dark;
+            }
+        }
+    }
+    
+}
+
+
+.current_dark{
+    background-color:$main-bg-color-dark;
+    .current{
+        &_display{
+            &__temp{
+                .city_name{
+                    color:$main-text-color-dark;
+                }
+
+                .icon_cont{
+                    .temperature{
+                        color:$main-text-color-dark;
+                    }
+                }
+            }
+            &__secondary{
+            
+                .feels{
+                    color:$main-text-color-dark;
+                }
+                .upDown{
+                    color:$main-text-color-dark;
+                    .up{
+                        color:$main-text-color-dark;
+
+                    }
+                    .down{
+                    color:$main-text-color-dark;
+
+                    }
+                }
+
+                &_items{
+                
+                    &__item{
+                        .item{
+                            &_value{
+                                color:$main-text-color-dark;
+                            }
+                        }
+                        
+                    }
+                }
+
+            }
+        }
+
+        
+    }
+}
+
+
+.wholeDay_dark{
+    background-color:$main-bg-color-dark;
+    .mySwiper_item{
+        .hour{
+            &_temp{
+                color:$main-text-color-dark;
+            }
+
+            &_time{
+                color:$main-text-color-dark;
+
+            }
+
+            &_wind{
+                color:$main-text-color-dark;
+
+                &__icon{
+                    svg{
+                        fill:$main-text-color-dark;
+
+                    }
+                }
+            }
+        }
+
+    }
+    
+}
+
+
+.extended_dark{
+    background-color:$main-bg-color-dark;
+    .extended{
+        &_items{
+            &__item{
+                &_title{
+                    color:$main-text-color-dark;
+                }
+                &_descr{
+                    color:$main-text-color-dark;
+
+                }
+
+                &_temp{
+                    color:$main-text-color-dark;
+
+                }
+            }
+        }
+    }
+    
+}
+
+.slot__label_dark{
+    color:$main-text-color-dark;
+}
+
+.toggle_dark{
+    color:$main-text-color-dark;
+    &::before{
+        color:$main-text-color-dark;
+    }
+}

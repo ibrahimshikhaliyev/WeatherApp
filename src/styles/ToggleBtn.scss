@@ -1,0 +1,72 @@
+@import './variables.scss';
+
+
+.toggle, .toggle:before, .slot__label, .curtain {
+	transition-property: background-color, transform, visibility;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in, cubic-bezier(0.6,0.2,0.4,1.5), linear;
+}
+
+.toggle:before, .slot, .slot__label {
+	display: block;
+}
+.toggle:before, .curtain {
+	position: absolute;
+}
+
+.toggle:focus {
+	outline: transparent;
+}
+.toggle {
+	border-radius: 0.75em;
+	box-shadow: 0 0 0 0.1em inset;
+	cursor: pointer;
+	position: relative;
+	margin-right: 0.25em;
+	width: 3em;
+	height: 1.5em;
+	appearance: none;
+}
+.toggle:before {
+	background: currentColor;
+	border-radius: 50%;
+	content: "";
+	top: 0.2em;
+	left: 0.2em;
+	width: 1.1em;
+	height: 1.1em;
+	color: $main-color;
+}
+.toggle:checked:before {
+	transform: translateX(1.5em);
+}
+.toggle:checked ~ .slot .slot__label, .slot__label:nth-child(2) {
+	transform: translateY(-50%) scaleY(0);
+}
+.toggle:checked ~ .slot .slot__label:nth-child(2) {
+	transform: translateY(-100%) scaleY(1);
+}
+.toggle:checked ~ .curtain {
+	transform: scaleX(1);
+}
+.slot {
+	color: transparent;
+	font-size: 1.2em;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	line-height: 1;
+	height: 1em;
+	
+}
+.slot__label {
+	transform-origin: 50% 0;
+	color:$main-color;
+	
+}
+.slot__label:nth-child(2) {
+	transform-origin: 50% 100%;
+}
+
+
+
+
